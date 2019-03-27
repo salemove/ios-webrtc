@@ -2,11 +2,13 @@
 
 ## Prerequisite
 
-In order to build the project, [Depot tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up) are required to be exported to PATH
+In order to build the project, [Depot tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up) are required to be exported to PATH.
+
+The repo is using git lfs to store large files so it should be [installed](https://help.github.com/en/articles/installing-git-large-file-storage) prior to fetching the repo.
 
 ### Flow
 
-After checking out repository make sure you run `gcclient sync` as described [here](https://webrtc.org/native-code/ios/)
+After checking out repository make sure you run `gcclient sync` as described [here](https://webrtc.org/native-code/ios/).
 
 
 ### Generating development ready library with Bitcode
@@ -23,4 +25,12 @@ Run the command `python build_ios_libs.py --bitcode --arch {arm64,x64}` inside t
 
 ### Fastlane
 
-You can use fastlane to generate the development and production libraries. Make sure to run `bundle install` before doing so which will get the correct version of fastlane
+You can use fastlane to generate the development and production libraries. Make sure to run `bundle install` before to get all the required gems.
+
+
+### Troubleshoot
+
+What to do if the framework is not present after doing `pod install`?
+
+If you have run pod install before installing git lsf you will need to clear you cocoapods cache with `rm -rf /Users/$USER/Library/Caches/CocoaPods` and your pods and podfile.lock and run podfile install again
+https://github.com/CocoaPods/CocoaPods/issues/4801
