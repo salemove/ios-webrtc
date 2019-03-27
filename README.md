@@ -19,3 +19,8 @@ The unwated architecture can be stripped [using lipo and script](http://ikennd.a
 ### Generate production ready library with Bitcode enabled
 
 Run the command `python build_ios_libs.py --bitcode --arch {arm64,x64}` inside the src/tools_webrtc/ios that will generate the FAT framework.
+
+
+### Fastlane
+
+You can use fastlane to generate the development and production libraries. Make sure to run `bundle install` before doing so which will get the correct version of fastlane
