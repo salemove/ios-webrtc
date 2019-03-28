@@ -16,14 +16,19 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios build_development_library
-```
-fastlane ios build_development_library
-```
-
 ### ios build_production_library
 ```
 fastlane ios build_production_library
+```
+
+### ios build_bitcode_library
+```
+fastlane ios build_bitcode_library
+```
+
+### ios release
+```
+fastlane ios release
 ```
 
 
