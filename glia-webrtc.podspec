@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "glia-webrtc"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "WebRTC SDK for iOS build with bitcode"
   s.description  = <<-DESC
     WebRTC is a free, open project that provides browsers and mobile
@@ -14,8 +14,17 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'
+  s.default_subspecs = 'release'
 
-  s.source_files = "out_ios_libs/WebRTC.framework/Headers/**/*.h"
-  s.public_header_files = "out_ios_libs/WebRTC.framework/Headers/**/*.h"
-  s.vendored_frameworks = "out_ios_libs/WebRTC.framework"
+  s.subspec 'release' do |rsp|
+    rsp.source_files = "output/release/WebRTC.framework/Headers/**/*.h"
+    rsp.public_header_files = "output/release/WebRTC.framework/Headers/**/*.h"
+    rsp.vendored_frameworks = "output/release/WebRTC.framework"
+  end
+
+  s.subspec 'bitcode' do |bsp|
+    bsp.source_files = "output/bitcode/WebRTC.framework/Headers/**/*.h"
+    bsp.public_header_files = "output/bitcode/WebRTC.framework/Headers/**/*.h"
+    bsp.vendored_frameworks = "output/bitcode/WebRTC.framework"
+  end
 end

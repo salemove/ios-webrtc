@@ -1,26 +1,27 @@
 # More documentation about how to customize your build
 # can be found here:
 # https://docs.fastlane.tools
-fastlane_version "1.109.0"
-
-# This value helps us track success metrics for Fastfiles
-# we automatically generate. Feel free to remove this line
-# once you get things running smoothly!
-generated_fastfile_id "694ded81-fb40-4a37-82a8-aa2a99be14c7"
+fastlane_version "2.112.0"
 
 default_platform :ios
 
 platform :ios do
-  lane :build_development_library do
+  lane :build_production_library do
     Dir.chdir("../src/tools_webrtc/ios") do
-      sh("python", "build_ios_libs.py", "--bitcode")
+      sh("python", "build_ios_libs.py")
+      sh("cp", "-fr", "../../out_ios_libs/WebRTC.framework", "../../../output/release/")
     end
   end
 
-  lane :build_production_library do
+  lane :build_bitcode_library do
     Dir.chdir("../src/tools_webrtc/ios") do
-      sh("python", "build_ios_libs.py", "--bitcode", "--arch", "arm64")
+      sh("python", "build_ios_libs.py", "--bitcode")
+      sh("cp", "-fr", "../../out_ios_libs/WebRTC.framework", "../../../output/bitcode/")
     end
-end
+  end
 
+  lane :release do
+    build_production_library
+    build_bitcode_library
+  end
 end

@@ -1,0 +1,2 @@
+output/bitcode/WebRTC.framework/WebRTC filter=lfs diff=lfs merge=lfs -text
+output/release/WebRTC.framework/WebRTC filter=lfs diff=lfs merge=lfs -text
