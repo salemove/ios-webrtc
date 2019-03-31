@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     APIs.
                    DESC
   s.homepage     = "http://webrtc.org/"
-  s.source       = { :git => 'git@github.com:salemove/glia-webrtc.git', :tag => s.version.to_s }
+  s.source       = { :git => 'https://github.com/salemove/glia-webrtc.git', :tag => s.version.to_s }
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { 'Glia' => 'mobile@glia.com' }
 
