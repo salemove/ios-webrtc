@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "glia-webrtc"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "WebRTC SDK for iOS build with bitcode"
   s.description  = <<-DESC
     WebRTC is a free, open project that provides browsers and mobile
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     APIs.
                    DESC
   s.homepage     = "http://webrtc.org/"
-  s.source       = { :git => 'https://github.com/salemove/glia-webrtc.git', :tag => s.version.to_s }
+  s.source       = { :git => 'https://github.com/salemove/ios-webrtc.git', :tag => s.version.to_s }
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { 'Glia' => 'mobile@glia.com' }
 
