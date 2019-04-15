@@ -26,6 +26,11 @@ fastlane ios build_production_library
 fastlane ios build_bitcode_library
 ```
 
+### ios build_static_library
+```
+fastlane ios build_static_library
+```
+
 ### ios release
 ```
 fastlane ios release

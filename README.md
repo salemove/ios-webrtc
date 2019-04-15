@@ -12,11 +12,13 @@ Cocoapods has multiple subspecs available:
 
 In order to build the project, [Depot tools](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up) are required to be exported to PATH.
 
+After checking out the repository update the submodules by running `git submodule update --recursive`
+
 The repo is using git lfs to store large files so it should be [installed](https://help.github.com/en/articles/installing-git-large-file-storage) prior to fetching the repo.
 
 ### Flow
 
-After checking out repository make sure you run `gcclient sync` as described [here](https://webrtc.org/native-code/ios/).
+After checking out repository make sure you run `fetch --nohooks webrtc_ios` and `gclient sync` as described [here](https://webrtc.org/native-code/ios/).
 
 ### Generating release library
 

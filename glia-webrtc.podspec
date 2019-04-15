@@ -27,4 +27,10 @@ Pod::Spec.new do |s|
     bsp.public_header_files = "output/bitcode/WebRTC.framework/Headers/**/*.h"
     bsp.vendored_frameworks = "output/bitcode/WebRTC.framework"
   end
+
+  s.subspec 'static' do |bsp|
+    bsp.source_files = "output/static/WebRTC.framework/Headers/**/*.h"
+    bsp.public_header_files = "output/static/WebRTC.framework/Headers/**/*.h"
+    bsp.vendored_frameworks = "output/static/WebRTC.framework"
+  end
 end

@@ -20,8 +20,16 @@ platform :ios do
     end
   end
 
+  lane :build_static_library do
+    Dir.chdir("../src/tools_webrtc/ios") do
+      sh("python", "build_ios_libs.py", "--bitcode", "-b", "static_only")
+      sh("cp", "-fr", "../../out_ios_libs/librtc_sdk_objc.a", "../../../output/static/WebRTC.framework/WebRTC")
+    end
+  end
+
   lane :release do
     build_production_library
     build_bitcode_library
+    build_static_library
   end
 end
