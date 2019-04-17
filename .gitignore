@@ -19,6 +19,10 @@ DerivedData
 *.hmap
 *.ipa
 
+# Files
+
+.cipd/
+
 # Bundler
 .bundle
 
